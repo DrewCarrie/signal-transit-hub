@@ -28,11 +28,11 @@ import {
   useWriteContract,
 } from "wagmi";
 import { base } from "wagmi/chains";
-import { signalArcadeAbi } from "@/lib/abi";
+import { signalTransitHubAbi } from "@/lib/abi";
 import {
   appConfigStatus,
   erc8021DataSuffix,
-  signalArcadeAddress,
+  signalTransitHubAddress,
 } from "@/lib/contract";
 
 type ActionKey = "pulseSignal" | "flipSwitch" | "stampPass";
@@ -73,36 +73,36 @@ const actionDetails: Record<
 const readContractCalls = (address?: `0x${string}`) =>
   [
     {
-      address: signalArcadeAddress,
-      abi: signalArcadeAbi,
+      address: signalTransitHubAddress,
+      abi: signalTransitHubAbi,
       functionName: "userPulses",
       args: [address ?? "0x0000000000000000000000000000000000000000"],
     },
     {
-      address: signalArcadeAddress,
-      abi: signalArcadeAbi,
+      address: signalTransitHubAddress,
+      abi: signalTransitHubAbi,
       functionName: "userSwitches",
       args: [address ?? "0x0000000000000000000000000000000000000000"],
     },
     {
-      address: signalArcadeAddress,
-      abi: signalArcadeAbi,
+      address: signalTransitHubAddress,
+      abi: signalTransitHubAbi,
       functionName: "userStamps",
       args: [address ?? "0x0000000000000000000000000000000000000000"],
     },
     {
-      address: signalArcadeAddress,
-      abi: signalArcadeAbi,
+      address: signalTransitHubAddress,
+      abi: signalTransitHubAbi,
       functionName: "totalPulses",
     },
     {
-      address: signalArcadeAddress,
-      abi: signalArcadeAbi,
+      address: signalTransitHubAddress,
+      abi: signalTransitHubAbi,
       functionName: "totalSwitches",
     },
     {
-      address: signalArcadeAddress,
-      abi: signalArcadeAbi,
+      address: signalTransitHubAddress,
+      abi: signalTransitHubAbi,
       functionName: "totalStamps",
     },
   ] as const;
@@ -201,8 +201,8 @@ export default function Home() {
       }
 
       const txHash = await writeContractAsync({
-        address: signalArcadeAddress,
-        abi: signalArcadeAbi,
+        address: signalTransitHubAddress,
+        abi: signalTransitHubAbi,
         functionName,
         chainId: base.id,
         dataSuffix: erc8021DataSuffix,

@@ -1,4 +1,4 @@
-export const signalArcadeAbi = [
+export const signalTransitHubAbi = [
   {
     type: "function",
     name: "userPulses",

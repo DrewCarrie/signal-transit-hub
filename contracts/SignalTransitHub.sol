@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-contract SignalArcade {
+contract SignalTransitHub {
     mapping(address => uint256) public userPulses;
     mapping(address => uint256) public userSwitches;
     mapping(address => uint256) public userStamps;
