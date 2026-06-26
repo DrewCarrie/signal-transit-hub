@@ -26,7 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <meta name="base:app_id" content="PASTE_BASE_DEV_VERIFY_TOKEN_HERE" />
+        <meta name="base:app_id" content="6a3e1b8d83b1b97823e06e8a" />
+        <meta
+          name="talentapp:project_verification"
+          content="5fbe7d0e8a03b170e8bcced2d1ba00a2654d91f0d14cd937be7d07934cad9cbeec25823ab2c180f5de2eeda86a6d3dec90eacf2a4f9b26425ad376c688d66196"
+        />
       </head>
       <body>
         <Providers>{children}</Providers>
